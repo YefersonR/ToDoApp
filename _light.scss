@@ -1,0 +1,41 @@
+@import 'variables';
+
+body.light{
+    background: $backgroundlight;
+    .header{
+        background: url(/images/bg-desktop-light.jpg);
+        background-size: cover;
+
+    }
+
+    .todo{
+        border-bottom:1px solid $fontdisableL ;
+    }
+    ::placeholder{
+        color: $fontlight;
+    }
+    .todos,
+    .todo,
+    .states{
+        color: $fontlight;
+    }
+    .todos,
+    .content-todo,
+    .states{
+        box-shadow: 0 0 8px 0.5px $listlight;
+    }
+    .todos.active p,
+    .todo.active p {
+        text-decoration: line-through;
+        color: $fontdisableL;
+    }
+    .todos,
+    .content-todo,
+    .states{
+        background:$backgroundlight ;
+    }
+    footer{
+        color: $fontlight;
+        text-align: center;
+    }
+}

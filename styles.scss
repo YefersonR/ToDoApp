@@ -1,0 +1,148 @@
+@import url(https://fonts.google.com/specimen/Josefin+Sans);
+@import 'light';
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background: $backgroundDark;
+    transition: all .5s ease;
+    .header{
+        background: url(/images/bg-desktop-dark.jpg);
+        height: 250px;
+        background-size: cover;
+        transition: all .5s ease;
+        .header-content{
+            width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 60px;
+            color: #fff;
+            h1{
+                font-size: 2rem;
+                font-weight: 700;
+                letter-spacing: 10px;
+            }
+            box-icon{
+                cursor: pointer;
+                width: 1.5rem;
+                height: 1.5rem;
+
+            }
+        }
+    }
+    main{
+        position: relative;
+        top: -140px;
+        width: 40%;
+        margin: 20px auto;
+        .todos{
+            margin-bottom: 20px;
+            input{
+                border: none;
+                background: none;
+                font-size: 1.025rem;
+                color: inherit;
+
+            }
+            input:focus{
+                outline: none;
+            }
+        }
+        ::placeholder{
+            color: $fontdark;
+        }
+        .todos,
+        .todo,
+        .states{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: $fontdark;
+            padding: 20px;
+            transition: all .5s ease;
+            p{
+                font-size: 1.025rem;
+            }
+
+        }
+        .states{
+            justify-content: space-between;
+            color: $fontdark2;
+            transition: all .5s ease;
+
+        }
+        .states p {
+            cursor: pointer;
+        }
+        .todos span,
+        .todo span{
+            border: 1px solid $borderdark;
+            border-radius: 50%;
+            width: 2%;
+            margin:0 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all .5s ease;
+
+        }
+        .todos.active span,
+        .todo.active span{
+            background:$coloractive ;
+            border: none;
+            
+        }
+        .todo.active p {
+            text-decoration: line-through;
+            color: $fontdisble;
+        }
+        .todos input,
+        .todo p{
+            width: 90%;
+        }
+ 
+        .todo{
+            border-bottom:1px solid $fontdisble ;
+            padding: 15px;
+        }
+        .todos,
+        .content-todo,
+        .states{
+            background:$listdark ;
+            transition: all .5s ease;
+            box-shadow: 0 0 8px 0.5px $listdark;
+        }
+        .content-todo{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .todos,
+        .states{
+            padding: 15px;
+        }
+        .state-todo{
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .todo-list{
+            color: $todoactive;
+            transition: all .5s ease;
+
+        }
+    }
+    
+    footer{
+        margin-top: 50px;
+        color: $fontdark2;
+        text-align: center;
+    }
+}

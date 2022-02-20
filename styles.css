@@ -1,0 +1,294 @@
+@import url(https://fonts.google.com/specimen/Josefin+Sans);
+/*
+- Bright Blue: 
+- Check Background: 
+*/
+/*
+- Very Dark Blue: 
+- Very Dark Desaturated Blue: 
+- Light Grayish Blue: 
+- Light Grayish Blue (hover): 
+- Dark Grayish Blue: 
+- Very Dark Grayish Blue: 
+- Very Dark Grayish Blue: 
+
+*/
+body.light {
+  background: #fafafa;
+}
+
+body.light .header {
+  background: url(/images/bg-desktop-light.jpg);
+  background-size: cover;
+}
+
+body.light .todo {
+  border-bottom: 1px solid #d2d3db;
+}
+
+body.light ::-webkit-input-placeholder {
+  color: #484b6a;
+}
+
+body.light :-ms-input-placeholder {
+  color: #484b6a;
+}
+
+body.light ::-ms-input-placeholder {
+  color: #484b6a;
+}
+
+body.light ::placeholder {
+  color: #484b6a;
+}
+
+body.light .todos,
+body.light .todo,
+body.light .states {
+  color: #484b6a;
+}
+
+body.light .todos,
+body.light .content-todo,
+body.light .states {
+  -webkit-box-shadow: 0 0 8px 0.5px #e4e5f1;
+          box-shadow: 0 0 8px 0.5px #e4e5f1;
+}
+
+body.light .todos.active p,
+body.light .todo.active p {
+  text-decoration: line-through;
+  color: #d2d3db;
+}
+
+body.light .todos,
+body.light .content-todo,
+body.light .states {
+  background: #fafafa;
+}
+
+body.light footer {
+  color: #484b6a;
+  text-align: center;
+}
+
+/*
+- Bright Blue: 
+- Check Background: 
+*/
+/*
+- Very Dark Blue: 
+- Very Dark Desaturated Blue: 
+- Light Grayish Blue: 
+- Light Grayish Blue (hover): 
+- Dark Grayish Blue: 
+- Very Dark Grayish Blue: 
+- Very Dark Grayish Blue: 
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #161722;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body .header {
+  background: url(/images/bg-desktop-dark.jpg);
+  height: 250px;
+  background-size: cover;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body .header .header-content {
+  width: 40%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  top: 60px;
+  color: #fff;
+}
+
+body .header .header-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+
+body .header .header-content box-icon {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+body main {
+  position: relative;
+  top: -140px;
+  width: 40%;
+  margin: 20px auto;
+}
+
+body main .todos {
+  margin-bottom: 20px;
+}
+
+body main .todos input {
+  border: none;
+  background: none;
+  font-size: 1.025rem;
+  color: inherit;
+}
+
+body main .todos input:focus {
+  outline: none;
+}
+
+body main ::-webkit-input-placeholder {
+  color: #cacde8;
+}
+
+body main :-ms-input-placeholder {
+  color: #cacde8;
+}
+
+body main ::-ms-input-placeholder {
+  color: #cacde8;
+}
+
+body main ::placeholder {
+  color: #cacde8;
+}
+
+body main .todos,
+body main .todo,
+body main .states {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #cacde8;
+  padding: 20px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body main .todos p,
+body main .todo p,
+body main .states p {
+  font-size: 1.025rem;
+}
+
+body main .states {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #777a92;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body main .states p {
+  cursor: pointer;
+}
+
+body main .todos span,
+body main .todo span {
+  border: 1px solid #4d5066;
+  border-radius: 50%;
+  width: 2%;
+  margin: 0 5px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body main .todos.active span,
+body main .todo.active span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+  border: none;
+}
+
+body main .todo.active p {
+  text-decoration: line-through;
+  color: #393a4c;
+}
+
+body main .todos input,
+body main .todo p {
+  width: 90%;
+}
+
+body main .todo {
+  border-bottom: 1px solid #393a4c;
+  padding: 15px;
+}
+
+body main .todos,
+body main .content-todo,
+body main .states {
+  background: #25273c;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-box-shadow: 0 0 8px 0.5px #25273c;
+          box-shadow: 0 0 8px 0.5px #25273c;
+}
+
+body main .content-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+body main .todos,
+body main .states {
+  padding: 15px;
+}
+
+body main .state-todo {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .todo-list {
+  color: #3a7bfd;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body footer {
+  margin-top: 50px;
+  color: #777a92;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
