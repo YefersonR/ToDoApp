@@ -4,6 +4,7 @@ const containertodos = document.getElementById("contentodo")
 const newdo = document.getElementById('newdo')
 const clear = document.getElementById('clear')
 const state = document.querySelectorAll('#state')
+var timeleft = document.getElementById('timeleft')
 var todolist = {}
 historyTodo = []
 var filtertodo
@@ -54,13 +55,15 @@ function addNewTodo(){
     historyTodo.push(todolist)
     todolist = {}
 }
-//save todos in localstorage
+//save todos to localstorage
 function setLocalStorage(){
     localStorage.setItem('history',JSON.stringify(historyTodo))
     getLocalStorage()
     
 }
 
+
+//get todos of localstorage
 function getLocalStorage(){
     historyTodo = JSON.parse(localStorage.getItem('history'))
     filtertodo = historyTodo
@@ -68,9 +71,7 @@ function getLocalStorage(){
 }
 
 
-
-
-//get todos of localstorage and show ToDolist
+// show ToDolist
 function getTodoList(){
     containertodos.innerHTML = ''
 
@@ -81,13 +82,13 @@ function getTodoList(){
         filtertodo.forEach(e=>{
             //var element = historyTodo.map(e=> e.state)
             if(e.state){
-                containertodos.innerHTML+= `<div class="todo active" id="todo">
+                containertodos.innerHTML+= `<div class="todo active" id="todo" draggable="true">
                 <span></span>
                 <p>${e.name}</p>
                 <i class='bx bx-x-circle'></i>
                 </div>`
             }else{
-                containertodos.innerHTML+= `<div class="todo" id="todo">
+                containertodos.innerHTML+= `<div class="todo" id="todo" draggable="true">
                 <span></span>
                 <p>${e.name}</p>
                 <i class='bx bx-x-circle'></i>
@@ -100,31 +101,35 @@ function getTodoList(){
 }   
 
 
-
 //insertar un nuevo element
 newdo.addEventListener("keypress",(e)=>{
     if(e.key === 'Enter'){
         if(newdo.value != ''){
             addNewTodo()
+            const time1 = new Date()
+            minute1 =Math.floor(time1 / (1000 * 60)) % 60 
+            
             setLocalStorage()
         }
-        console.log(historyTodo)
         newdo.value= ''
     }
-})
+})  
+ var h=0
+ setInterval(()=>{timeleft.innerHTML = `${h++} Mins Left`},60000)
+    
 
 
 //Marcar y eleminar todo
 containertodos.addEventListener('click',(e)=>{
     if(e.target.tagName == 'SPAN'){
-        var element = historyTodo.map(e=> e.name).indexOf(e.path[1].children[1].innerText)
+        var element = historyTodo.map(e=> e.name.toLowerCase()).indexOf(e.path[1].children[1].innerText.toLowerCase())
         historyTodo[element].state = !historyTodo[element].state
         e.path[1].classList.toggle('active')
         setLocalStorage()
         
     }
     else if(e.target.tagName == 'I'){
-        var element = historyTodo.map(e=> e.name).indexOf(e.path[1].children[1].innerText)
+        var element = historyTodo.map(e=> e.name.toLowerCase()).indexOf(e.path[1].children[1].innerText.toLowerCase())
         historyTodo.splice(element,1)
         setLocalStorage()
     }
@@ -134,10 +139,27 @@ containertodos.addEventListener('click',(e)=>{
 
 
 //Drag and drop
+var index1
+containertodos.addEventListener('dragstart',(e)=>{
+     index1= historyTodo.map(e=> e.name.toLowerCase()).indexOf(e.path[0].innerText.toLowerCase())
+})
+
+containertodos.addEventListener('dragover',(e)=>{
+    e.preventDefault()
+})
+containertodos.addEventListener('drop',(e)=>{
+    var index2= historyTodo.map(e=> e.name.toLowerCase()).indexOf(e.path[0].innerText.toLowerCase())
+    var todoOne = historyTodo[index1]
+    var todoTwo = historyTodo[index2] 
+
+    historyTodo[index1] = todoTwo 
+    historyTodo[index2] = todoOne
+    getTodoList()    
+})
+/*
+
+*/
 
 
 
-
-
-//
 document.addEventListener('DOMContentLoaded',getLocalStorage())

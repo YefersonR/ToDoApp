@@ -215,6 +215,7 @@ body main .todos p,
 body main .todo p,
 body main .states p {
   font-size: 1.025rem;
+  text-transform: capitalize;
 }
 
 body main .states {
