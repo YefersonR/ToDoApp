@@ -26,6 +26,10 @@ body.light .todo {
   border-bottom: 1px solid #d2d3db;
 }
 
+body.light .todo .bx.bx-x-circle {
+  color: #484b6a;
+}
+
 body.light ::-webkit-input-placeholder {
   color: #484b6a;
 }
@@ -72,6 +76,22 @@ body.light footer {
   text-align: center;
 }
 
+@media only screen and (max-width: 525px) {
+  body.light .header {
+    background: url(/images/bg-mobile-light.jpg);
+    background-size: cover;
+  }
+  body.light .states {
+    -webkit-box-shadow: 0 0 5px #e4e5f1;
+            box-shadow: 0 0 5px #e4e5f1;
+  }
+  body.light .state-todo {
+    background: #fafafa;
+    -webkit-box-shadow: 0 0 10px #e4e5f1;
+            box-shadow: 0 0 10px #e4e5f1;
+  }
+}
+
 /*
 - Bright Blue: 
 - Check Background: 
@@ -96,6 +116,7 @@ body.light footer {
 }
 
 body {
+  min-width: 375px;
   background: #161722;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -110,7 +131,7 @@ body .header {
 }
 
 body .header .header-content {
-  width: 40%;
+  width: 45%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,7 +159,7 @@ body .header .header-content box-icon {
 body main {
   position: relative;
   top: -140px;
-  width: 40%;
+  width: 50%;
   margin: 20px auto;
 }
 
@@ -216,7 +237,6 @@ body main .todo span {
   width: 2%;
   margin: 0 5px;
   padding: 10px;
-  cursor: pointer;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
@@ -233,14 +253,32 @@ body main .todo.active p {
   color: #393a4c;
 }
 
+body main .todo.active .bx.bx-x-circle {
+  display: block;
+}
+
 body main .todos input,
 body main .todo p {
   width: 90%;
 }
 
 body main .todo {
+  overflow-wrap: break-word;
   border-bottom: 1px solid #393a4c;
   padding: 15px;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+  cursor: pointer;
+}
+
+body main .todo .bx.bx-x-circle {
+  display: none;
+  color: #cacde8;
+  font-size: 1.5rem;
+}
+
+body main .todo:hover .bx.bx-x-circle {
+  display: block;
 }
 
 body main .todos,
@@ -290,5 +328,78 @@ body footer {
   margin-top: 50px;
   color: #777a92;
   text-align: center;
+}
+
+@media only screen and (max-width: 980px) {
+  body {
+    width: 100%;
+  }
+  body .header {
+    width: 100%;
+  }
+  body .header .header-content {
+    width: 55%;
+  }
+  body main {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  body {
+    width: 100%;
+  }
+  body .header-content {
+    width: 80%;
+  }
+  body main {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  body {
+    width: 100%;
+  }
+  body .header {
+    background: url(/images/bg-mobile-dark.jpg);
+    background-size: cover;
+  }
+  body .header .header-content {
+    width: 85%;
+  }
+  body main {
+    width: 80%;
+  }
+  body main .states {
+    position: relative;
+  }
+  body main .todos,
+  body main .todo,
+  body main .states {
+    border-radius: 5px;
+  }
+  body main .todo .bx.bx-x-circle {
+    display: block;
+    font-size: 1rem;
+  }
+  body main .state-todo {
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    font-weight: 700;
+    background: #25273c;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: -1px;
+  }
+  body footer {
+    margin-top: 130px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

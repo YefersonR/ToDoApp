@@ -10,6 +10,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
+    min-width: 375px;
     background: $backgroundDark;
     transition: all .5s ease;
     .header{
@@ -18,7 +19,7 @@ body{
         background-size: cover;
         transition: all .5s ease;
         .header-content{
-            width: 40%;
+            width: 45%;
             margin: auto;
             display: flex;
             justify-content: space-between;
@@ -41,7 +42,7 @@ body{
     main{
         position: relative;
         top: -140px;
-        width: 40%;
+        width: 50%;
         margin: 20px auto;
         .todos{
             margin-bottom: 20px;
@@ -70,6 +71,7 @@ body{
             transition: all .5s ease;
             p{
                 font-size: 1.025rem;
+            
             }
 
         }
@@ -89,7 +91,6 @@ body{
             width: 2%;
             margin:0 5px;
             padding: 10px;
-            cursor: pointer;
             transition: all .5s ease;
 
         }
@@ -103,15 +104,32 @@ body{
             text-decoration: line-through;
             color: $fontdisble;
         }
+        .todo.active .bx.bx-x-circle{
+                display: block;
+        }
         .todos input,
         .todo p{
             width: 90%;
         }
  
         .todo{
+            overflow-wrap:break-word;
             border-bottom:1px solid $fontdisble ;
             padding: 15px;
+            transition: all .5s ease-in;
+            cursor:pointer;
+            .bx.bx-x-circle{
+                display: none;
+                color: $fontdark;
+                font-size: 1.5rem;
+            }
+            &:hover{
+                .bx.bx-x-circle{
+                    display: block;
+                }
+            }
         }
+
         .todos,
         .content-todo,
         .states{
@@ -146,3 +164,78 @@ body{
         text-align: center;
     }
 }
+@media only screen and (max-width:980px){
+    body{
+        width: 100%;
+        .header{
+            width:100%;
+            .header-content{
+                width: 55%;
+            }
+        }
+        main{
+            width: 55%;
+        }
+    }
+        
+}
+@media only screen and (max-width:765px){
+    body{
+        width: 100%;
+        .header-content{
+            width: 80%;
+        }
+        main{
+            width: 80%;
+        }
+    }
+}
+    @media only screen and (max-width:525px){
+        body{
+            width: 100%;
+            .header{
+                background: url(/images/bg-mobile-dark.jpg);
+                background-size: cover;
+                .header-content{
+                    width: 85%;
+                }
+            }
+            main{
+                width: 80%;
+                .states{
+                    position: relative;
+                }
+                .todos,
+                .todo,
+                .states{
+                    border-radius: 5px;
+                }
+                .todo{
+                    .bx.bx-x-circle{
+                        display: block;
+                        font-size: 1rem;
+                    }
+                }
+                .state-todo{
+                transition: all .5s ease;
+                justify-content: space-evenly;
+                font-weight: 700;
+                background: $listdark;
+                padding: 20px;
+                border-radius: 5px;
+                position:absolute;
+                width: 100%;
+                top: 70px;
+                left: -1px;                
+            }
+            
+        }
+            footer{
+                margin-top: 130px;
+            }
+         
+        }
+
+            
+    }
+

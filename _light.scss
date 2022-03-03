@@ -10,6 +10,9 @@ body.light{
 
     .todo{
         border-bottom:1px solid $fontdisableL ;
+        .bx.bx-x-circle{
+            color: $fontlight;
+        }
     }
     ::placeholder{
         color: $fontlight;
@@ -39,3 +42,20 @@ body.light{
         text-align: center;
     }
 }
+    @media only screen and (max-width:525px){
+        body.light{
+            .header{
+                background: url(/images/bg-mobile-light.jpg);
+                background-size: cover;
+            }
+            .states{
+                box-shadow: 0 0 5px $listlight;
+            }
+            .state-todo{
+                background: $backgroundlight;
+                box-shadow: 0 0 10px $listlight;
+            }
+
+        }
+            
+    }
