@@ -154,7 +154,7 @@ containertodos.addEventListener('drop',(e)=>{
 
     historyTodo[index1] = todoTwo 
     historyTodo[index2] = todoOne
-    getTodoList()    
+    setLocalStorage()    
 })
 /*
 

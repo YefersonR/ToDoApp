@@ -18,3 +18,4 @@
 *.css.map
 *.sass.map
 *.scss.map
+.vercel
